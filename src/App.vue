@@ -3,23 +3,25 @@
     <div class="bg-white p-6">
       <img src="./assets/logo.png" alt="vue" class=" text-center m-auto" width="150" height="150">
       <h1 class=" text-center text-green-500 text-5xl ">Vue TODO LIST</h1>
-      <Title name="LIST"/>
-      <Title name="ADD"/>
+      <List />
+      <Add />
     </div>
   </Layout>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
 import Layout from "./components/Layout.vue"
-import Title from "./components/Title.vue"
-@Options({
-  components: {
+import List from "./components/List.vue"
+import Add from "./components/Add.vue"
+
+export default {
+  name: "App",
+  components:{
     Layout,
-    Title
-  },
-})
-export default class App extends Vue {}
+    List,
+    Add
+  }
+}
 </script>
 
 
