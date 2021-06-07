@@ -1,7 +1,7 @@
 <template>
     <div class="p-5">
         <Title name="LIST"/>
-        <Task id=123 name="aaa"/>
+        <Task :id="123" name="aaa"/>
     </div>
 </template>
 
