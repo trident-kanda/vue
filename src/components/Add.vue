@@ -40,10 +40,12 @@ export default {
   },
   methods: {
     addList: function(listData: props, name: string) {
-      if (listData === []) {
+      console.log(listData.length);
+      if (listData.length === 0) {
         listData.push({ id: 1, name: name });
       } else {
         const id = Math.max(...listData.map((item) => item.id)) + 1;
+        console.log(id);
         listData.push({ id: id, name: name });
       }
     },
