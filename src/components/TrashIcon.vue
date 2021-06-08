@@ -1,5 +1,6 @@
 <template>
   <svg
+    v-on:click="deleteList(id)"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width="24"
@@ -18,3 +19,19 @@
     ></path>
   </svg>
 </template>
+
+<script lang="ts">
+import { PropType } from "vue";
+type props = {
+  id: number;
+  name: string;
+}[];
+export default {
+  name: "TrashIcon",
+  props: {
+    id: Number,
+    listData: Array as PropType<props | []>,
+    deleteList: Function,
+  },
+};
+</script>

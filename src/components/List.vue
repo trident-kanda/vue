@@ -5,7 +5,9 @@
       v-for="item in listData"
       :name="item.name"
       :id="item.id"
+      :listData="listData"
       :key="item.id"
+      :deleteList="deleteList"
     />
   </div>
 </template>
@@ -27,6 +29,7 @@ export default {
   },
   props: {
     listData: Array as PropType<props | []>,
+    deleteList: Function,
   },
 };
 </script>

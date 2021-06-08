@@ -9,7 +9,7 @@
         height="150"
       />
       <h1 class=" text-center text-green-500 text-5xl ">Vue TODO LIST</h1>
-      <List :listData="listData" />
+      <List :listData="listData" :deleteList="deleteList" />
       <Add :listData="listData" />
     </div>
   </Layout>
@@ -19,10 +19,14 @@
 import Layout from "./components/Layout.vue";
 import List from "./components/List.vue";
 import Add from "./components/Add.vue";
-
 type state = {
   listData: { id: number; name: string }[] | [];
 };
+type data = {
+  id: number;
+  name: string;
+};
+
 export default {
   data(): state {
     return {
@@ -37,6 +41,13 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    deleteList: function(id: number): void {
+      (this as any).listData = (this as any).listData.filter((item: data) => {
+        return item.id !== id;
+      });
+    },
   },
   name: "App",
   components: {
