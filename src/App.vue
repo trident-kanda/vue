@@ -10,7 +10,7 @@
       />
       <h1 class=" text-center text-green-500 text-5xl ">Vue TODO LIST</h1>
       <List :listData="listData" />
-      <Add />
+      <Add :listData="listData" />
     </div>
   </Layout>
 </template>
